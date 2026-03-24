@@ -1,0 +1,1465 @@
+//Maya ASCII 2025ff03 scene
+//Name: Fichas.ma
+//Last modified: Sun, Mar 22, 2026 06:17:01 PM
+//Codeset: 1252
+requires maya "2025ff03";
+requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiStandardSurface"
+		 -nodeType "aiImagerDenoiserOidn" "mtoa" "5.4.8.2";
+currentUnit -l centimeter -a degree -t film;
+fileInfo "application" "maya";
+fileInfo "product" "Maya 2025";
+fileInfo "version" "2025";
+fileInfo "cutIdentifier" "202512041342-b90de33065";
+fileInfo "osv" "Windows 11 Home Single Language v2009 (Build: 26200)";
+fileInfo "UUID" "AF9DA2EA-4E96-48AF-EEDC-F6A262FDD536";
+createNode transform -s -n "persp";
+	rename -uid "F1ADE2A4-49C6-9844-9CA4-0482FE676386";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" -8.0034768094350728 16.260627075598496 8.5950114019054258 ;
+	setAttr ".r" -type "double3" -51.938352728162663 -2.9999999999985167 1.9905746893448677e-16 ;
+createNode camera -s -n "perspShape" -p "persp";
+	rename -uid "4C44A9FD-4D13-9CBC-4FD3-05B88C7CC5FA";
+	setAttr -k off ".v" no;
+	setAttr ".fl" 34.999999999999993;
+	setAttr ".coi" 13.043757957148499;
+	setAttr ".imn" -type "string" "persp";
+	setAttr ".den" -type "string" "persp_depth";
+	setAttr ".man" -type "string" "persp_mask";
+	setAttr ".hc" -type "string" "viewSet -p %camera";
+createNode transform -s -n "top";
+	rename -uid "B81B82A2-4839-CF5B-D1C3-E4A8AEA5D1C6";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 0 1000.1 0 ;
+	setAttr ".r" -type "double3" -90 0 0 ;
+createNode camera -s -n "topShape" -p "top";
+	rename -uid "E1D615E8-408A-8D61-B26F-B193EE7F4049";
+	setAttr -k off ".v" no;
+	setAttr ".rnd" no;
+	setAttr ".coi" 1000.1;
+	setAttr ".ow" 30;
+	setAttr ".imn" -type "string" "top";
+	setAttr ".den" -type "string" "top_depth";
+	setAttr ".man" -type "string" "top_mask";
+	setAttr ".hc" -type "string" "viewSet -t %camera";
+	setAttr ".o" yes;
+	setAttr ".ai_translator" -type "string" "orthographic";
+createNode transform -s -n "front";
+	rename -uid "D4E0FF86-41C1-930E-284D-E88552D7C212";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 0 0 1000.1 ;
+createNode camera -s -n "frontShape" -p "front";
+	rename -uid "33D5AA43-447D-4EA0-4F3C-4FA833203B10";
+	setAttr -k off ".v" no;
+	setAttr ".rnd" no;
+	setAttr ".coi" 1000.1;
+	setAttr ".ow" 30;
+	setAttr ".imn" -type "string" "front";
+	setAttr ".den" -type "string" "front_depth";
+	setAttr ".man" -type "string" "front_mask";
+	setAttr ".hc" -type "string" "viewSet -f %camera";
+	setAttr ".o" yes;
+	setAttr ".ai_translator" -type "string" "orthographic";
+createNode transform -s -n "side";
+	rename -uid "925372AC-4108-CEFD-E4B8-45992187BD01";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 1000.1 0 0 ;
+	setAttr ".r" -type "double3" 0 90 0 ;
+createNode camera -s -n "sideShape" -p "side";
+	rename -uid "5CDFAB61-43DB-E519-C636-40B5E6A493A3";
+	setAttr -k off ".v" no;
+	setAttr ".rnd" no;
+	setAttr ".coi" 1000.1;
+	setAttr ".ow" 30;
+	setAttr ".imn" -type "string" "side";
+	setAttr ".den" -type "string" "side_depth";
+	setAttr ".man" -type "string" "side_mask";
+	setAttr ".hc" -type "string" "viewSet -s %camera";
+	setAttr ".o" yes;
+	setAttr ".ai_translator" -type "string" "orthographic";
+createNode transform -n "VR_Jenga:pCube8";
+	rename -uid "A976829D-4006-9524-0B9E-D78A11056094";
+	setAttr ".t" -type "double3" -6.4120527086647936 6.5361396221363304 0 ;
+	setAttr ".s" -type "double3" 1 1 2.2283486463508875 ;
+createNode mesh -n "VR_Jenga:pCubeShape8" -p "VR_Jenga:pCube8";
+	rename -uid "BF5FD32A-44F8-1068-974C-659F284D5F77";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
+		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "VR_Jenga:pCube24";
+	rename -uid "B90B8348-437D-4A62-CBBF-BAB0F6CAEFBC";
+	setAttr ".t" -type "double3" -7.9975806240868135 6.5143457476613413 0 ;
+	setAttr ".s" -type "double3" 1 1 2.2283486463508875 ;
+createNode mesh -n "VR_Jenga:pCubeShape24" -p "VR_Jenga:pCube24";
+	rename -uid "3D43CCA5-404F-07CE-86F9-5C80CB8378E7";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
+		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "VR_Jenga:pCube40";
+	rename -uid "43337B81-4C60-5CBD-A48B-F28D6ED59746";
+	setAttr ".t" -type "double3" -9.707655030468036 6.4432383578840007 0 ;
+	setAttr ".s" -type "double3" 1 1 2.2283486463508875 ;
+createNode mesh -n "VR_Jenga:pCubeShape40" -p "VR_Jenga:pCube40";
+	rename -uid "9198D899-4ACA-85BB-9ACF-7C94CE8A952D";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr -s 6 ".gtag";
+	setAttr ".gtag[0].gtagnm" -type "string" "back";
+	setAttr ".gtag[0].gtagcmp" -type "componentList" 1 "f[2]";
+	setAttr ".gtag[1].gtagnm" -type "string" "bottom";
+	setAttr ".gtag[1].gtagcmp" -type "componentList" 1 "f[3]";
+	setAttr ".gtag[2].gtagnm" -type "string" "front";
+	setAttr ".gtag[2].gtagcmp" -type "componentList" 1 "f[0]";
+	setAttr ".gtag[3].gtagnm" -type "string" "left";
+	setAttr ".gtag[3].gtagcmp" -type "componentList" 1 "f[5]";
+	setAttr ".gtag[4].gtagnm" -type "string" "right";
+	setAttr ".gtag[4].gtagcmp" -type "componentList" 1 "f[4]";
+	setAttr ".gtag[5].gtagnm" -type "string" "top";
+	setAttr ".gtag[5].gtagcmp" -type "componentList" 1 "f[1]";
+	setAttr ".pv" -type "double2" 0.5 0.5 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 14 ".uvst[0].uvsp[0:13]" -type "float2" 0.375 0 0.625 0 0.375
+		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
+		 0.875 0.25 0.125 0 0.125 0.25;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".vt[0:7]"  -0.5 -0.5 0.5 0.5 -0.5 0.5 -0.5 0.5 0.5 0.5 0.5 0.5
+		 -0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5;
+	setAttr -s 12 ".ed[0:11]"  0 1 0 2 3 0 4 5 0 6 7 0 0 2 0 1 3 0 2 4 0
+		 3 5 0 4 6 0 5 7 0 6 0 0 7 1 0;
+	setAttr -s 6 -ch 24 ".fc[0:5]" -type "polyFaces" 
+		f 4 0 5 -2 -5
+		mu 0 4 0 1 3 2
+		f 4 1 7 -3 -7
+		mu 0 4 2 3 5 4
+		f 4 2 9 -4 -9
+		mu 0 4 4 5 7 6
+		f 4 3 11 -1 -11
+		mu 0 4 6 7 9 8
+		f 4 -12 -10 -8 -6
+		mu 0 4 1 10 11 3
+		f 4 10 4 6 8
+		mu 0 4 12 0 2 13;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "VR_Jenga:group";
+	rename -uid "F89E4933-4483-5CA5-8321-4A9E903FB603";
+	setAttr ".rp" -type "double3" 1.0251253712769126 8.0588965464210212 0 ;
+	setAttr ".sp" -type "double3" 1.0251253712769126 8.0588965464210212 0 ;
+createNode lightLinker -s -n "lightLinker1";
+	rename -uid "C9F2B6A7-4707-0D63-B6C0-319AD3573836";
+	setAttr -s 21 ".lnk";
+	setAttr -s 21 ".slnk";
+createNode shapeEditorManager -n "shapeEditorManager";
+	rename -uid "9F1411D0-414B-746F-0651-378281C070F2";
+createNode poseInterpolatorManager -n "poseInterpolatorManager";
+	rename -uid "DC28B802-44AF-57E3-DF20-C99C42523AC1";
+createNode displayLayerManager -n "layerManager";
+	rename -uid "002C709B-4895-9012-E0F4-C8A19D3D5DDB";
+createNode displayLayer -n "defaultLayer";
+	rename -uid "A453C479-447E-73E1-ECDD-9381BAEB3CAD";
+	setAttr ".ufem" -type "stringArray" 0  ;
+createNode renderLayerManager -n "renderLayerManager";
+	rename -uid "A72CA5C9-457E-AB86-8E1F-AA8EB561D8D6";
+createNode renderLayer -n "defaultRenderLayer";
+	rename -uid "F57B5948-4C87-D738-23E6-38A916D0C280";
+	setAttr ".g" yes;
+createNode aiOptions -s -n "defaultArnoldRenderOptions";
+	rename -uid "87F0EE60-4A22-5AC5-6A8A-C7B2A4D97871";
+	setAttr ".version" -type "string" "5.4.8.2";
+createNode aiAOVFilter -s -n "defaultArnoldFilter";
+	rename -uid "70630ACB-4423-43D5-3F47-C4A01AF8D811";
+	setAttr ".ai_translator" -type "string" "gaussian";
+createNode aiAOVDriver -s -n "defaultArnoldDriver";
+	rename -uid "054BF949-4622-A81D-6D55-ABB9F218E329";
+	setAttr ".ai_translator" -type "string" "exr";
+createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
+	rename -uid "616080EB-40E8-8263-524A-A19280984E93";
+	setAttr ".ai_translator" -type "string" "maya";
+	setAttr ".output_mode" 0;
+createNode aiImagerDenoiserOidn -s -n "defaultArnoldDenoiser";
+	rename -uid "33548B9C-4382-C071-FA26-F39F10532647";
+createNode script -n "uiConfigurationScriptNode";
+	rename -uid "E78BA650-4DB5-E04F-8A0E-19A5B102A0AC";
+	setAttr ".b" -type "string" (
+		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
+		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n"
+		+ "            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n"
+		+ "            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n"
+		+ "            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
+		+ "            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n"
+		+ "            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n"
+		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n"
+		+ "            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n"
+		+ "            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n"
+		+ "            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1361\n            -height 1043\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n"
+		+ "            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n"
+		+ "            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n"
+		+ "            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n"
+		+ "            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n"
+		+ "                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n"
+		+ "                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayValues 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showPlayRangeShades \"on\" \n                -lockPlayRangeShades \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -tangentScale 1\n                -tangentLineThickness 1\n                -keyMinScale 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -preSelectionHighlight 0\n                -limitToSelectedCurves 0\n                -constrainDrag 0\n                -valueLinesToggle 0\n                -highlightAffectedCurves 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 0\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n"
+		+ "                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 1\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -showUfeItems 1\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n"
+		+ "                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -hierarchyBelow 0\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayValues 0\n"
+		+ "                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n"
+		+ "                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n"
+		+ "                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -showUnitConversions 0\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -connectedGraphingMode 1\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n"
+		+ "                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -showUnitConversions 0\n                -editorMode \"default\" \n                -hasWatchpoint 0\n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1361\\n    -height 1043\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1361\\n    -height 1043\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
+	setAttr ".st" 3;
+createNode script -n "sceneConfigurationScriptNode";
+	rename -uid "2911533E-4549-D6A5-6D44-3BB78C205651";
+	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
+	setAttr ".st" 6;
+createNode standardSurface -n "VR_Jenga:standardSurface2";
+	rename -uid "FEE25C9B-4293-D1C1-A51F-20AF9360709B";
+createNode shadingEngine -n "VR_Jenga:standardSurface2SG";
+	rename -uid "03C25DCF-4877-E278-04BF-CAAA70AC6F06";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:materialInfo1";
+	rename -uid "E949160B-4990-90F6-91FC-29938233332E";
+createNode standardSurface -n "VR_Jenga:standardSurface3";
+	rename -uid "D9D8A89B-436A-83EB-16DA-86904F3B6F96";
+createNode shadingEngine -n "VR_Jenga:standardSurface3SG";
+	rename -uid "7CA61F0C-4132-20C9-D770-5C9A6A950FE0";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:materialInfo2";
+	rename -uid "5A6CCEEC-40D6-BB00-D390-D39B6B2C72F5";
+createNode file -n "VR_Jenga:Diseño_sin_título__12__1";
+	rename -uid "D39B2F9D-4CC0-4DBD-9B3A-E6A3BDC8A558";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/Downloads/Diseño sin título (12).png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "VR_Jenga:place2dTexture1";
+	rename -uid "C3D1F86C-4A78-F33C-726B-10972640D7AF";
+createNode standardSurface -n "VR_Jenga:standardSurface4";
+	rename -uid "808787DB-41FB-C026-E205-40A99F92D426";
+createNode shadingEngine -n "VR_Jenga:standardSurface4SG";
+	rename -uid "F88D2304-4F74-C835-9D92-F2BB71EC5A96";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:materialInfo3";
+	rename -uid "84653456-4994-2920-EE89-82816B44F2C3";
+createNode file -n "VR_Jenga:Diseño_sin_título__13__1";
+	rename -uid "47AE7CE3-4561-E7FE-E91D-EBA0D6C174EE";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/Downloads/Diseño sin título (13).png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "VR_Jenga:place2dTexture2";
+	rename -uid "67DBA40B-48D1-75DF-4419-99AE6C2AE9B2";
+createNode standardSurface -n "VR_Jenga:standardSurface5";
+	rename -uid "6B53D32E-4592-DA68-14D6-0C8F6D8C6FEB";
+createNode shadingEngine -n "VR_Jenga:standardSurface5SG";
+	rename -uid "D1BF6A39-432A-1B1C-7158-9B8B91C0FD28";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:materialInfo4";
+	rename -uid "69FB77D7-466F-6DEF-31A2-6DBB809E23CE";
+createNode file -n "VR_Jenga:Diseño_sin_título__14__1";
+	rename -uid "9A4CCE84-4A52-FD30-DA8B-04909375F780";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/Downloads/Diseño sin título (14).png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "VR_Jenga:place2dTexture3";
+	rename -uid "10C4BED4-4D7C-7786-CCEF-1994A69B5F1F";
+createNode phong -n "VR_Jenga:mesa1:tripo_mat_36502e0e";
+	rename -uid "6C3357B1-4B68-E61A-FFE7-308F8CB3419C";
+	setAttr ".dc" 1;
+	setAttr ".sc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".rfl" 0;
+	setAttr ".rc" -type "float3" 0.80000001 0.80000001 0.80000001 ;
+	setAttr ".cp" 2;
+createNode shadingEngine -n "VR_Jenga:mesa1:tripo_node_36502e0eSG";
+	rename -uid "2CA3BDF6-4EDD-07D4-0735-ABAB17234ECB";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:mesa1:materialInfo1";
+	rename -uid "075700A5-4CCD-C7ED-8D41-CC849503F9E1";
+createNode file -n "VR_Jenga:mesa1:base_color_texture";
+	rename -uid "C7902BC7-4A76-4709-D5C0-D3B303BB6C12";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/OneDrive - UNAB/Documentos/Ingenieria Sistema/Multomedia/wooden+coffee+table+3d+model/tripo_convert_36502e0e-2b17-4709-95cd-97b617c14da0.fbm/woodencoffeetable3dmodel_basecolor.JPEG";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "VR_Jenga:mesa1:place2dTexture1";
+	rename -uid "768EAE04-440F-49FB-47F1-388EA941B7C2";
+createNode materialInfo -n "VR_Jenga:pasted__materialInfo2";
+	rename -uid "D85F767D-48F2-7A06-D845-3FBBCFD88773";
+createNode shadingEngine -n "VR_Jenga:pasted__standardSurface3SG";
+	rename -uid "2D1DEA6C-4D15-8F2E-F744-1FB65C22101B";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode standardSurface -n "VR_Jenga:pasted__standardSurface3";
+	rename -uid "D4E9C1E9-47B5-5415-9F07-6DBEC7FB1F07";
+createNode file -n "VR_Jenga:pasted__Diseño_sin_título__12__1";
+	rename -uid "25EC1E30-40AA-5EC3-83E0-C199F6D8BFF3";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/Downloads/Diseño sin título (12).png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "VR_Jenga:pasted__place2dTexture1";
+	rename -uid "76FEB411-4641-81CA-2C9C-07B7CB0E609B";
+createNode materialInfo -n "VR_Jenga:pasted__materialInfo3";
+	rename -uid "0D6DE563-4756-9CFE-E1C1-11AEF0DB5310";
+createNode shadingEngine -n "VR_Jenga:pasted__standardSurface4SG";
+	rename -uid "BA0FD942-4AE1-9CC1-B0E7-CCB69D34EA36";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode standardSurface -n "VR_Jenga:pasted__standardSurface4";
+	rename -uid "35DE4247-43C8-C07B-EFD3-C7BEE81669AC";
+createNode file -n "VR_Jenga:pasted__Diseño_sin_título__13__1";
+	rename -uid "4AB69581-4D2D-BD67-B1FD-78AEDE8E8D93";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/Downloads/Diseño sin título (13).png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "VR_Jenga:pasted__place2dTexture2";
+	rename -uid "B4716619-4D7C-ACB6-1B3E-0599E29164D8";
+createNode materialInfo -n "VR_Jenga:pasted__materialInfo4";
+	rename -uid "7A196F46-42A2-D287-5DF4-46BD910F7F53";
+createNode shadingEngine -n "VR_Jenga:pasted__standardSurface5SG";
+	rename -uid "030994B8-4F0C-49C0-B4F4-70B4A0F39DC1";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode standardSurface -n "VR_Jenga:pasted__standardSurface5";
+	rename -uid "3BDA15DD-46CB-7A26-4A6B-0C88C6837089";
+createNode file -n "VR_Jenga:pasted__Diseño_sin_título__14__1";
+	rename -uid "99FC8CEA-47B1-8278-BEF9-2A888E3F2DCC";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/Downloads/Diseño sin título (14).png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "VR_Jenga:pasted__place2dTexture3";
+	rename -uid "AAC420AE-404E-F1B8-F147-4A869CC49E5D";
+createNode phong -n "VR_Jenga:Jardin:Plate1_ncl1_2";
+	rename -uid "A9196317-4805-EAB6-064A-668DB91311C4";
+	setAttr ".dc" 1;
+	setAttr ".c" -type "float3" 0.80000001 0.80000001 0.80000001 ;
+	setAttr ".ambc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".sc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".rfl" 1;
+createNode shadingEngine -n "VR_Jenga:Jardin:Plate1FBXASC046003SG";
+	rename -uid "739AC130-41EB-CF00-89DF-979B6BCA906C";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:Jardin:materialInfo1";
+	rename -uid "F30679A8-40DE-E2D0-8DB7-F4AE2065AC07";
+createNode phong -n "VR_Jenga:Jardin:Plate2_ncl1_2";
+	rename -uid "0CFA1948-4CD9-056E-2E19-D89F238D2D2A";
+	setAttr ".dc" 1;
+	setAttr ".c" -type "float3" 0.80000001 0.80000001 0.80000001 ;
+	setAttr ".ambc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".sc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".rfl" 1;
+createNode shadingEngine -n "VR_Jenga:Jardin:Plate2FBXASC046003SG";
+	rename -uid "F010EF21-4FBD-94B2-D537-1189192034D9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:Jardin:materialInfo2";
+	rename -uid "B472EBCF-4B4F-A61C-7410-1A9B699357D6";
+createNode phong -n "VR_Jenga:Jardin:Plate3_ncl1_2";
+	rename -uid "C65EB872-49A1-B639-C806-E2A5028C695C";
+	setAttr ".dc" 1;
+	setAttr ".c" -type "float3" 0.80000001 0.80000001 0.80000001 ;
+	setAttr ".ambc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".sc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".rfl" 1;
+createNode shadingEngine -n "VR_Jenga:Jardin:Plate3FBXASC046003SG";
+	rename -uid "E0E02D24-48E6-7C13-F06B-679058CBDB50";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:Jardin:materialInfo3";
+	rename -uid "F9E6A77E-4EFE-4926-19CD-21A5A205C056";
+createNode phong -n "VR_Jenga:Jardin:Material";
+	rename -uid "5F0BC97D-4C59-1194-A9BA-1098C371BA4C";
+	setAttr ".dc" 1;
+	setAttr ".c" -type "float3" 0.80000001 0.80000001 0.80000001 ;
+	setAttr ".ambc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".sc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".rfl" 1;
+createNode shadingEngine -n "VR_Jenga:Jardin:PlaneSG";
+	rename -uid "F94452A9-48D9-8FCA-E6DF-D8A708BA197E";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:Jardin:materialInfo4";
+	rename -uid "8A468429-4D3A-E9F9-53B1-499F9BA4F324";
+createNode phong -n "VR_Jenga:Jardin:tripo_mat_b5ebecae";
+	rename -uid "8D6E10C6-4806-BE04-9DD0-0893553B8BA1";
+	setAttr ".dc" 1;
+	setAttr ".sc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".rfl" 0;
+	setAttr ".rc" -type "float3" 0.80000001 0.80000001 0.80000001 ;
+	setAttr ".cp" 2;
+createNode shadingEngine -n "VR_Jenga:Jardin:tripo_node_b5ebecaeSG";
+	rename -uid "2870DC2E-4A9C-4E6E-08DE-55951BE927CA";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:Jardin:materialInfo5";
+	rename -uid "71990703-480E-9EAC-8BA6-64979D55D898";
+createNode file -n "VR_Jenga:Jardin:base_color_texture";
+	rename -uid "9BEC4A75-4179-E7AF-F102-A2B14200D7E3";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/OneDrive - UNAB/Documentos/Ingenieria Sistema/Multomedia/landscape+patch+3d+model/tripo_convert_b5ebecae-3ccd-42ea-b132-155d9355435a.fbm/landscapepatch3dmodel_basecolor.JPEG";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "VR_Jenga:Jardin:place2dTexture1";
+	rename -uid "F6C9653A-4301-EFC4-3A05-D985EAEDBC83";
+createNode phong -n "VR_Jenga:Jardin:tripo_mat_7a9657fd";
+	rename -uid "A0C86045-47A7-491E-6ACA-8AB12D15BD23";
+	setAttr ".dc" 1;
+	setAttr ".sc" -type "float3" 0.2 0.2 0.2 ;
+	setAttr ".rfl" 0;
+	setAttr ".rc" -type "float3" 0.80000001 0.80000001 0.80000001 ;
+	setAttr ".cp" 2;
+createNode shadingEngine -n "VR_Jenga:Jardin:tripo_node_7a9657fdSG";
+	rename -uid "8C0938C7-4DF0-33A5-05A7-00A1560D3265";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "VR_Jenga:Jardin:materialInfo6";
+	rename -uid "5DFBD49D-4DBE-421B-402E-38BDE10CD494";
+createNode file -n "VR_Jenga:Jardin:base_color_texture1";
+	rename -uid "E6969E16-4FE5-0244-EC21-32B31682570A";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/OneDrive - UNAB/Documentos/Ingenieria Sistema/Multomedia/nature+landscape+3d+model/tripo_convert_7a9657fd-e7da-45ef-9612-26e7ad04c2f2.fbm/naturelandscape3dmodel_basecolor.JPEG";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "VR_Jenga:Jardin:place2dTexture2";
+	rename -uid "2216C2D3-48A0-E55B-72D0-2D86117C0D43";
+createNode nodeGraphEditorInfo -n "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "4330ED26-4CE7-F8FE-1CD0-6CA9CBAC6657";
+	setAttr ".def" no;
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -13405.331215876386 905.12135324706935 ;
+	setAttr ".tgi[0].vh" -type "double2" -11466.396234718022 1561.4745789781728 ;
+	setAttr -s 12 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -11790.8232421875;
+	setAttr ".tgi[0].ni[0].y" 818.78070068359375;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" -12139.39453125;
+	setAttr ".tgi[0].ni[1].y" 818.78070068359375;
+	setAttr ".tgi[0].ni[1].nvs" 2387;
+	setAttr ".tgi[0].ni[2].x" -12145.7138671875;
+	setAttr ".tgi[0].ni[2].y" 1475.7142333984375;
+	setAttr ".tgi[0].ni[2].nvs" 1923;
+	setAttr ".tgi[0].ni[3].x" -12589.224609375;
+	setAttr ".tgi[0].ni[3].y" 1483.9300537109375;
+	setAttr ".tgi[0].ni[3].nvs" 2387;
+	setAttr ".tgi[0].ni[4].x" -13093.1298828125;
+	setAttr ".tgi[0].ni[4].y" 1446.4530029296875;
+	setAttr ".tgi[0].ni[4].nvs" 1923;
+	setAttr ".tgi[0].ni[5].x" -12871.701171875;
+	setAttr ".tgi[0].ni[5].y" 1446.4530029296875;
+	setAttr ".tgi[0].ni[5].nvs" 1923;
+	setAttr ".tgi[0].ni[6].x" -6057.14306640625;
+	setAttr ".tgi[0].ni[6].y" 1498.5714111328125;
+	setAttr ".tgi[0].ni[6].nvs" 2387;
+	setAttr ".tgi[0].ni[7].x" -5708.5712890625;
+	setAttr ".tgi[0].ni[7].y" 1498.5714111328125;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" -6617.4794921875;
+	setAttr ".tgi[0].ni[8].y" 1446.707763671875;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" -6396.05126953125;
+	setAttr ".tgi[0].ni[9].y" 1446.707763671875;
+	setAttr ".tgi[0].ni[9].nvs" 1923;
+	setAttr ".tgi[0].ni[10].x" -12687.19921875;
+	setAttr ".tgi[0].ni[10].y" 813.08660888671875;
+	setAttr ".tgi[0].ni[10].nvs" 1923;
+	setAttr ".tgi[0].ni[11].x" -12465.771484375;
+	setAttr ".tgi[0].ni[11].y" 813.08660888671875;
+	setAttr ".tgi[0].ni[11].nvs" 1923;
+createNode aiStandardSurface -n "aiStandardSurface1";
+	rename -uid "C209E9CA-4070-16FF-118C-8EA91C449F38";
+createNode shadingEngine -n "aiStandardSurface1SG";
+	rename -uid "FC4AE4C8-42DE-3514-0E59-63BEE6A2C5CE";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo1";
+	rename -uid "0EE5ED81-40D5-3C3B-4066-96975A3849F5";
+createNode aiStandardSurface -n "aiStandardSurface2";
+	rename -uid "4BC3A633-41DF-34AB-AA87-57A6F78F084C";
+createNode shadingEngine -n "aiStandardSurface2SG";
+	rename -uid "AD8F7D41-4CE7-E038-A7B0-25A3C22FFF86";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo2";
+	rename -uid "9BCE65FC-4E85-9940-94C9-B29DE513D2D7";
+createNode aiStandardSurface -n "aiStandardSurface3";
+	rename -uid "BEBD036D-4498-A145-C51C-7B94CBBE025B";
+createNode shadingEngine -n "aiStandardSurface3SG";
+	rename -uid "5E8DC797-420A-4B11-CA93-9EBD65F7F8BF";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo3";
+	rename -uid "33E7657D-4543-FEA9-3025-8C82D9D137BC";
+createNode file -n "file1";
+	rename -uid "468D8A96-4441-12DF-D926-5D92ECBB66CE";
+	setAttr ".cs" -type "string" "sRGB";
+createNode file -n "file2";
+	rename -uid "D2BE28BA-42ED-5799-C251-9A9CD86C741B";
+	setAttr ".cs" -type "string" "sRGB";
+createNode file -n "VR_Jenga_standardSurface3_Base_color_1";
+	rename -uid "091C65E7-4969-E7E4-46E0-17A3452C75D3";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/OneDrive - UNAB/Documentos/Adobe/Adobe Substance 3D Painter/export/VR_Jenga_standardSurface3_Base_color.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture1";
+	rename -uid "7978D7BE-40DC-541F-032F-09BCED7F5C08";
+createNode aiStandardSurface -n "aiStandardSurface4";
+	rename -uid "C11F3576-4E0F-C004-FFE8-0ABE53BDA2CD";
+createNode shadingEngine -n "aiStandardSurface4SG";
+	rename -uid "EDE75F30-4B8B-AADD-ADBA-6C9F25DEF1C9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo5";
+	rename -uid "6210A62D-43F8-841B-6F31-DAB240A82463";
+createNode file -n "VR_Jenga_standardSurface4_Base_color_1";
+	rename -uid "E5266782-41AB-EDBD-3700-CCBA535DBF63";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/OneDrive - UNAB/Documentos/Adobe/Adobe Substance 3D Painter/export/VR_Jenga_standardSurface4_Base_color.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture2";
+	rename -uid "0DF21304-422E-98CF-FCFF-27B2A9781BB1";
+createNode aiStandardSurface -n "aiStandardSurface5";
+	rename -uid "62C85F9A-4D78-332B-89E0-36AF731C6DD2";
+createNode shadingEngine -n "aiStandardSurface5SG";
+	rename -uid "49FC4ECF-4184-19A6-F861-90B9C0E48587";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo6";
+	rename -uid "49509D38-467E-84ED-E353-3BB36D7037F5";
+createNode file -n "VR_Jenga_standardSurface5_Base_color_1";
+	rename -uid "4AC2C13C-4820-2A84-00C3-129D7E279828";
+	setAttr ".ftn" -type "string" "C:/Users/rocko/OneDrive - UNAB/Documentos/Adobe/Adobe Substance 3D Painter/export/VR_Jenga_standardSurface5_Base_color.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture3";
+	rename -uid "E611F37D-416E-B29A-7165-A79CFC7CB516";
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "3422DE2D-4A6B-65A8-06B6-8293861A2546";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" 1586.1054358059685 -2375.4840613808024 ;
+	setAttr ".tgi[0].vh" -type "double2" 4763.6276674830506 -1299.8538897349351 ;
+	setAttr -s 13 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 2656.371337890625;
+	setAttr ".tgi[0].ni[0].y" -810.6590576171875;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" 2877.7998046875;
+	setAttr ".tgi[0].ni[1].y" -810.6590576171875;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" 3314.72314453125;
+	setAttr ".tgi[0].ni[2].y" -732.5130615234375;
+	setAttr ".tgi[0].ni[2].nvs" 2387;
+	setAttr ".tgi[0].ni[3].x" 3663.294677734375;
+	setAttr ".tgi[0].ni[3].y" -732.5130615234375;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" 2571.526123046875;
+	setAttr ".tgi[0].ni[4].y" -34.216621398925781;
+	setAttr ".tgi[0].ni[4].nvs" 1923;
+	setAttr ".tgi[0].ni[5].x" 3336.010009765625;
+	setAttr ".tgi[0].ni[5].y" -1484.706787109375;
+	setAttr ".tgi[0].ni[5].nvs" 2387;
+	setAttr ".tgi[0].ni[6].x" 3684.58154296875;
+	setAttr ".tgi[0].ni[6].y" -1484.706787109375;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" 2652.759521484375;
+	setAttr ".tgi[0].ni[7].y" -1570.6314697265625;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" 2874.188232421875;
+	setAttr ".tgi[0].ni[8].y" -1570.6314697265625;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" 3972.327880859375;
+	setAttr ".tgi[0].ni[9].y" 229.11505126953125;
+	setAttr ".tgi[0].ni[9].nvs" 1923;
+	setAttr ".tgi[0].ni[10].x" 2803.5;
+	setAttr ".tgi[0].ni[10].y" 218.38102722167969;
+	setAttr ".tgi[0].ni[10].nvs" 1923;
+	setAttr ".tgi[0].ni[11].x" 3623.75634765625;
+	setAttr ".tgi[0].ni[11].y" 229.11505126953125;
+	setAttr ".tgi[0].ni[11].nvs" 2387;
+	setAttr ".tgi[0].ni[12].x" 2792.95458984375;
+	setAttr ".tgi[0].ni[12].y" -34.216621398925781;
+	setAttr ".tgi[0].ni[12].nvs" 1923;
+select -ne :time1;
+	setAttr ".o" 1;
+	setAttr ".unw" 1;
+select -ne :hardwareRenderingGlobals;
+	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
+	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
+		 1 1 1 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 ;
+	setAttr ".fprt" yes;
+	setAttr ".rtfm" 1;
+select -ne :renderPartition;
+	setAttr -s 21 ".st";
+select -ne :renderGlobalsList1;
+select -ne :defaultShaderList1;
+	setAttr -s 24 ".s";
+select -ne :postProcessList1;
+	setAttr -s 2 ".p";
+select -ne :defaultRenderUtilityList1;
+	setAttr -s 12 ".u";
+select -ne :defaultRenderingList1;
+select -ne :defaultTextureList1;
+	setAttr -s 14 ".tx";
+select -ne :standardSurface1;
+	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
+	setAttr ".sr" 0.5;
+select -ne :initialShadingGroup;
+	setAttr ".ro" yes;
+select -ne :initialParticleSE;
+	setAttr ".ro" yes;
+select -ne :defaultRenderGlobals;
+	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
+	setAttr ".ren" -type "string" "arnold";
+	setAttr ".dss" -type "string" "standardSurface1";
+select -ne :defaultResolution;
+	setAttr ".pa" 1;
+select -ne :defaultColorMgtGlobals;
+	setAttr ".cfe" yes;
+	setAttr ".cfp" -type "string" "<MAYA_RESOURCES>/OCIO-configs/Maya2022-default/config.ocio";
+	setAttr ".vtn" -type "string" "ACES 1.0 SDR-video (sRGB)";
+	setAttr ".vn" -type "string" "ACES 1.0 SDR-video";
+	setAttr ".dn" -type "string" "sRGB";
+	setAttr ".wsn" -type "string" "ACEScg";
+	setAttr ".otn" -type "string" "ACES 1.0 SDR-video (sRGB)";
+	setAttr ".potn" -type "string" "ACES 1.0 SDR-video (sRGB)";
+select -ne :hardwareRenderGlobals;
+	setAttr ".ctrs" 256;
+	setAttr ".btrs" 512;
+relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:standardSurface2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:standardSurface3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:standardSurface4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:standardSurface5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:mesa1:tripo_node_36502e0eSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:pasted__standardSurface3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:pasted__standardSurface4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:pasted__standardSurface5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:Jardin:Plate1FBXASC046003SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:Jardin:Plate2FBXASC046003SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:Jardin:Plate3FBXASC046003SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:Jardin:PlaneSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:Jardin:tripo_node_b5ebecaeSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "VR_Jenga:Jardin:tripo_node_7a9657fdSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "aiStandardSurface1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "aiStandardSurface2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "aiStandardSurface3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "aiStandardSurface5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "aiStandardSurface4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:standardSurface2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:standardSurface3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:standardSurface4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:standardSurface5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:mesa1:tripo_node_36502e0eSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:pasted__standardSurface3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:pasted__standardSurface4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:pasted__standardSurface5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:Jardin:Plate1FBXASC046003SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:Jardin:Plate2FBXASC046003SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:Jardin:Plate3FBXASC046003SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:Jardin:PlaneSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:Jardin:tripo_node_b5ebecaeSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "VR_Jenga:Jardin:tripo_node_7a9657fdSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "aiStandardSurface1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "aiStandardSurface2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "aiStandardSurface3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "aiStandardSurface5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "aiStandardSurface4SG.message" ":defaultLightSet.message";
+connectAttr "layerManager.dli[0]" "defaultLayer.id";
+connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
+connectAttr ":defaultArnoldDenoiser.msg" ":defaultArnoldRenderOptions.imagers" -na
+		;
+connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drivers"
+		 -na;
+connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
+connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
+connectAttr "VR_Jenga:standardSurface2.oc" "VR_Jenga:standardSurface2SG.ss";
+connectAttr "VR_Jenga:standardSurface2SG.msg" "VR_Jenga:materialInfo1.sg";
+connectAttr "VR_Jenga:standardSurface2.msg" "VR_Jenga:materialInfo1.m";
+connectAttr "VR_Jenga:Diseño_sin_título__12__1.oc" "VR_Jenga:standardSurface3.bc"
+		;
+connectAttr "VR_Jenga:standardSurface3.oc" "VR_Jenga:standardSurface3SG.ss";
+connectAttr "VR_Jenga:standardSurface3SG.msg" "VR_Jenga:materialInfo2.sg";
+connectAttr "VR_Jenga:standardSurface3.msg" "VR_Jenga:materialInfo2.m";
+connectAttr "VR_Jenga:Diseño_sin_título__12__1.msg" "VR_Jenga:materialInfo2.t" -na
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga:Diseño_sin_título__12__1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga:Diseño_sin_título__12__1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga:Diseño_sin_título__12__1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga:Diseño_sin_título__12__1.ws"
+		;
+connectAttr "VR_Jenga:place2dTexture1.c" "VR_Jenga:Diseño_sin_título__12__1.c";
+connectAttr "VR_Jenga:place2dTexture1.tf" "VR_Jenga:Diseño_sin_título__12__1.tf"
+		;
+connectAttr "VR_Jenga:place2dTexture1.rf" "VR_Jenga:Diseño_sin_título__12__1.rf"
+		;
+connectAttr "VR_Jenga:place2dTexture1.mu" "VR_Jenga:Diseño_sin_título__12__1.mu"
+		;
+connectAttr "VR_Jenga:place2dTexture1.mv" "VR_Jenga:Diseño_sin_título__12__1.mv"
+		;
+connectAttr "VR_Jenga:place2dTexture1.s" "VR_Jenga:Diseño_sin_título__12__1.s";
+connectAttr "VR_Jenga:place2dTexture1.wu" "VR_Jenga:Diseño_sin_título__12__1.wu"
+		;
+connectAttr "VR_Jenga:place2dTexture1.wv" "VR_Jenga:Diseño_sin_título__12__1.wv"
+		;
+connectAttr "VR_Jenga:place2dTexture1.re" "VR_Jenga:Diseño_sin_título__12__1.re"
+		;
+connectAttr "VR_Jenga:place2dTexture1.of" "VR_Jenga:Diseño_sin_título__12__1.of"
+		;
+connectAttr "VR_Jenga:place2dTexture1.r" "VR_Jenga:Diseño_sin_título__12__1.ro";
+connectAttr "VR_Jenga:place2dTexture1.n" "VR_Jenga:Diseño_sin_título__12__1.n";
+connectAttr "VR_Jenga:place2dTexture1.vt1" "VR_Jenga:Diseño_sin_título__12__1.vt1"
+		;
+connectAttr "VR_Jenga:place2dTexture1.vt2" "VR_Jenga:Diseño_sin_título__12__1.vt2"
+		;
+connectAttr "VR_Jenga:place2dTexture1.vt3" "VR_Jenga:Diseño_sin_título__12__1.vt3"
+		;
+connectAttr "VR_Jenga:place2dTexture1.vc1" "VR_Jenga:Diseño_sin_título__12__1.vc1"
+		;
+connectAttr "VR_Jenga:place2dTexture1.o" "VR_Jenga:Diseño_sin_título__12__1.uv";
+connectAttr "VR_Jenga:place2dTexture1.ofs" "VR_Jenga:Diseño_sin_título__12__1.fs"
+		;
+connectAttr "VR_Jenga:Diseño_sin_título__13__1.oc" "VR_Jenga:standardSurface4.bc"
+		;
+connectAttr "VR_Jenga:standardSurface4.oc" "VR_Jenga:standardSurface4SG.ss";
+connectAttr "VR_Jenga:standardSurface4SG.msg" "VR_Jenga:materialInfo3.sg";
+connectAttr "VR_Jenga:standardSurface4.msg" "VR_Jenga:materialInfo3.m";
+connectAttr "VR_Jenga:Diseño_sin_título__13__1.msg" "VR_Jenga:materialInfo3.t" -na
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga:Diseño_sin_título__13__1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga:Diseño_sin_título__13__1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga:Diseño_sin_título__13__1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga:Diseño_sin_título__13__1.ws"
+		;
+connectAttr "VR_Jenga:place2dTexture2.c" "VR_Jenga:Diseño_sin_título__13__1.c";
+connectAttr "VR_Jenga:place2dTexture2.tf" "VR_Jenga:Diseño_sin_título__13__1.tf"
+		;
+connectAttr "VR_Jenga:place2dTexture2.rf" "VR_Jenga:Diseño_sin_título__13__1.rf"
+		;
+connectAttr "VR_Jenga:place2dTexture2.mu" "VR_Jenga:Diseño_sin_título__13__1.mu"
+		;
+connectAttr "VR_Jenga:place2dTexture2.mv" "VR_Jenga:Diseño_sin_título__13__1.mv"
+		;
+connectAttr "VR_Jenga:place2dTexture2.s" "VR_Jenga:Diseño_sin_título__13__1.s";
+connectAttr "VR_Jenga:place2dTexture2.wu" "VR_Jenga:Diseño_sin_título__13__1.wu"
+		;
+connectAttr "VR_Jenga:place2dTexture2.wv" "VR_Jenga:Diseño_sin_título__13__1.wv"
+		;
+connectAttr "VR_Jenga:place2dTexture2.re" "VR_Jenga:Diseño_sin_título__13__1.re"
+		;
+connectAttr "VR_Jenga:place2dTexture2.of" "VR_Jenga:Diseño_sin_título__13__1.of"
+		;
+connectAttr "VR_Jenga:place2dTexture2.r" "VR_Jenga:Diseño_sin_título__13__1.ro";
+connectAttr "VR_Jenga:place2dTexture2.n" "VR_Jenga:Diseño_sin_título__13__1.n";
+connectAttr "VR_Jenga:place2dTexture2.vt1" "VR_Jenga:Diseño_sin_título__13__1.vt1"
+		;
+connectAttr "VR_Jenga:place2dTexture2.vt2" "VR_Jenga:Diseño_sin_título__13__1.vt2"
+		;
+connectAttr "VR_Jenga:place2dTexture2.vt3" "VR_Jenga:Diseño_sin_título__13__1.vt3"
+		;
+connectAttr "VR_Jenga:place2dTexture2.vc1" "VR_Jenga:Diseño_sin_título__13__1.vc1"
+		;
+connectAttr "VR_Jenga:place2dTexture2.o" "VR_Jenga:Diseño_sin_título__13__1.uv";
+connectAttr "VR_Jenga:place2dTexture2.ofs" "VR_Jenga:Diseño_sin_título__13__1.fs"
+		;
+connectAttr "VR_Jenga:Diseño_sin_título__14__1.oc" "VR_Jenga:standardSurface5.bc"
+		;
+connectAttr "VR_Jenga:standardSurface5.oc" "VR_Jenga:standardSurface5SG.ss";
+connectAttr "VR_Jenga:standardSurface5SG.msg" "VR_Jenga:materialInfo4.sg";
+connectAttr "VR_Jenga:standardSurface5.msg" "VR_Jenga:materialInfo4.m";
+connectAttr "VR_Jenga:Diseño_sin_título__14__1.msg" "VR_Jenga:materialInfo4.t" -na
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga:Diseño_sin_título__14__1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga:Diseño_sin_título__14__1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga:Diseño_sin_título__14__1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga:Diseño_sin_título__14__1.ws"
+		;
+connectAttr "VR_Jenga:place2dTexture3.c" "VR_Jenga:Diseño_sin_título__14__1.c";
+connectAttr "VR_Jenga:place2dTexture3.tf" "VR_Jenga:Diseño_sin_título__14__1.tf"
+		;
+connectAttr "VR_Jenga:place2dTexture3.rf" "VR_Jenga:Diseño_sin_título__14__1.rf"
+		;
+connectAttr "VR_Jenga:place2dTexture3.mu" "VR_Jenga:Diseño_sin_título__14__1.mu"
+		;
+connectAttr "VR_Jenga:place2dTexture3.mv" "VR_Jenga:Diseño_sin_título__14__1.mv"
+		;
+connectAttr "VR_Jenga:place2dTexture3.s" "VR_Jenga:Diseño_sin_título__14__1.s";
+connectAttr "VR_Jenga:place2dTexture3.wu" "VR_Jenga:Diseño_sin_título__14__1.wu"
+		;
+connectAttr "VR_Jenga:place2dTexture3.wv" "VR_Jenga:Diseño_sin_título__14__1.wv"
+		;
+connectAttr "VR_Jenga:place2dTexture3.re" "VR_Jenga:Diseño_sin_título__14__1.re"
+		;
+connectAttr "VR_Jenga:place2dTexture3.of" "VR_Jenga:Diseño_sin_título__14__1.of"
+		;
+connectAttr "VR_Jenga:place2dTexture3.r" "VR_Jenga:Diseño_sin_título__14__1.ro";
+connectAttr "VR_Jenga:place2dTexture3.n" "VR_Jenga:Diseño_sin_título__14__1.n";
+connectAttr "VR_Jenga:place2dTexture3.vt1" "VR_Jenga:Diseño_sin_título__14__1.vt1"
+		;
+connectAttr "VR_Jenga:place2dTexture3.vt2" "VR_Jenga:Diseño_sin_título__14__1.vt2"
+		;
+connectAttr "VR_Jenga:place2dTexture3.vt3" "VR_Jenga:Diseño_sin_título__14__1.vt3"
+		;
+connectAttr "VR_Jenga:place2dTexture3.vc1" "VR_Jenga:Diseño_sin_título__14__1.vc1"
+		;
+connectAttr "VR_Jenga:place2dTexture3.o" "VR_Jenga:Diseño_sin_título__14__1.uv";
+connectAttr "VR_Jenga:place2dTexture3.ofs" "VR_Jenga:Diseño_sin_título__14__1.fs"
+		;
+connectAttr "VR_Jenga:mesa1:base_color_texture.oc" "VR_Jenga:mesa1:tripo_mat_36502e0e.c"
+		;
+connectAttr "VR_Jenga:mesa1:tripo_mat_36502e0e.oc" "VR_Jenga:mesa1:tripo_node_36502e0eSG.ss"
+		;
+connectAttr "VR_Jenga:mesa1:tripo_node_36502e0eSG.msg" "VR_Jenga:mesa1:materialInfo1.sg"
+		;
+connectAttr "VR_Jenga:mesa1:tripo_mat_36502e0e.msg" "VR_Jenga:mesa1:materialInfo1.m"
+		;
+connectAttr "VR_Jenga:mesa1:base_color_texture.msg" "VR_Jenga:mesa1:materialInfo1.t"
+		 -na;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.o" "VR_Jenga:mesa1:base_color_texture.uv"
+		;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.ofu" "VR_Jenga:mesa1:base_color_texture.ofu"
+		;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.ofv" "VR_Jenga:mesa1:base_color_texture.ofv"
+		;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.rf" "VR_Jenga:mesa1:base_color_texture.rf"
+		;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.reu" "VR_Jenga:mesa1:base_color_texture.reu"
+		;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.rev" "VR_Jenga:mesa1:base_color_texture.rev"
+		;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.vt1" "VR_Jenga:mesa1:base_color_texture.vt1"
+		;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.vt2" "VR_Jenga:mesa1:base_color_texture.vt2"
+		;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.vt3" "VR_Jenga:mesa1:base_color_texture.vt3"
+		;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.vc1" "VR_Jenga:mesa1:base_color_texture.vc1"
+		;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.ofs" "VR_Jenga:mesa1:base_color_texture.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga:mesa1:base_color_texture.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga:mesa1:base_color_texture.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga:mesa1:base_color_texture.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga:mesa1:base_color_texture.ws"
+		;
+connectAttr "VR_Jenga:pasted__standardSurface3SG.msg" "VR_Jenga:pasted__materialInfo2.sg"
+		;
+connectAttr "VR_Jenga:pasted__standardSurface3.msg" "VR_Jenga:pasted__materialInfo2.m"
+		;
+connectAttr "VR_Jenga:pasted__Diseño_sin_título__12__1.msg" "VR_Jenga:pasted__materialInfo2.t"
+		 -na;
+connectAttr "VR_Jenga:pasted__standardSurface3.oc" "VR_Jenga:pasted__standardSurface3SG.ss"
+		;
+connectAttr "VR_Jenga:pasted__Diseño_sin_título__12__1.oc" "VR_Jenga:pasted__standardSurface3.bc"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga:pasted__Diseño_sin_título__12__1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga:pasted__Diseño_sin_título__12__1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga:pasted__Diseño_sin_título__12__1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga:pasted__Diseño_sin_título__12__1.ws"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.c" "VR_Jenga:pasted__Diseño_sin_título__12__1.c"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.tf" "VR_Jenga:pasted__Diseño_sin_título__12__1.tf"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.rf" "VR_Jenga:pasted__Diseño_sin_título__12__1.rf"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.mu" "VR_Jenga:pasted__Diseño_sin_título__12__1.mu"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.mv" "VR_Jenga:pasted__Diseño_sin_título__12__1.mv"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.s" "VR_Jenga:pasted__Diseño_sin_título__12__1.s"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.wu" "VR_Jenga:pasted__Diseño_sin_título__12__1.wu"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.wv" "VR_Jenga:pasted__Diseño_sin_título__12__1.wv"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.re" "VR_Jenga:pasted__Diseño_sin_título__12__1.re"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.of" "VR_Jenga:pasted__Diseño_sin_título__12__1.of"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.r" "VR_Jenga:pasted__Diseño_sin_título__12__1.ro"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.n" "VR_Jenga:pasted__Diseño_sin_título__12__1.n"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.vt1" "VR_Jenga:pasted__Diseño_sin_título__12__1.vt1"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.vt2" "VR_Jenga:pasted__Diseño_sin_título__12__1.vt2"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.vt3" "VR_Jenga:pasted__Diseño_sin_título__12__1.vt3"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.vc1" "VR_Jenga:pasted__Diseño_sin_título__12__1.vc1"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.o" "VR_Jenga:pasted__Diseño_sin_título__12__1.uv"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture1.ofs" "VR_Jenga:pasted__Diseño_sin_título__12__1.fs"
+		;
+connectAttr "VR_Jenga:pasted__standardSurface4SG.msg" "VR_Jenga:pasted__materialInfo3.sg"
+		;
+connectAttr "VR_Jenga:pasted__standardSurface4.msg" "VR_Jenga:pasted__materialInfo3.m"
+		;
+connectAttr "VR_Jenga:pasted__Diseño_sin_título__13__1.msg" "VR_Jenga:pasted__materialInfo3.t"
+		 -na;
+connectAttr "VR_Jenga:pasted__standardSurface4.oc" "VR_Jenga:pasted__standardSurface4SG.ss"
+		;
+connectAttr "VR_Jenga:pasted__Diseño_sin_título__13__1.oc" "VR_Jenga:pasted__standardSurface4.bc"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga:pasted__Diseño_sin_título__13__1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga:pasted__Diseño_sin_título__13__1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga:pasted__Diseño_sin_título__13__1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga:pasted__Diseño_sin_título__13__1.ws"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.c" "VR_Jenga:pasted__Diseño_sin_título__13__1.c"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.tf" "VR_Jenga:pasted__Diseño_sin_título__13__1.tf"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.rf" "VR_Jenga:pasted__Diseño_sin_título__13__1.rf"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.mu" "VR_Jenga:pasted__Diseño_sin_título__13__1.mu"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.mv" "VR_Jenga:pasted__Diseño_sin_título__13__1.mv"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.s" "VR_Jenga:pasted__Diseño_sin_título__13__1.s"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.wu" "VR_Jenga:pasted__Diseño_sin_título__13__1.wu"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.wv" "VR_Jenga:pasted__Diseño_sin_título__13__1.wv"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.re" "VR_Jenga:pasted__Diseño_sin_título__13__1.re"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.of" "VR_Jenga:pasted__Diseño_sin_título__13__1.of"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.r" "VR_Jenga:pasted__Diseño_sin_título__13__1.ro"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.n" "VR_Jenga:pasted__Diseño_sin_título__13__1.n"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.vt1" "VR_Jenga:pasted__Diseño_sin_título__13__1.vt1"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.vt2" "VR_Jenga:pasted__Diseño_sin_título__13__1.vt2"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.vt3" "VR_Jenga:pasted__Diseño_sin_título__13__1.vt3"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.vc1" "VR_Jenga:pasted__Diseño_sin_título__13__1.vc1"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.o" "VR_Jenga:pasted__Diseño_sin_título__13__1.uv"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture2.ofs" "VR_Jenga:pasted__Diseño_sin_título__13__1.fs"
+		;
+connectAttr "VR_Jenga:pasted__standardSurface5SG.msg" "VR_Jenga:pasted__materialInfo4.sg"
+		;
+connectAttr "VR_Jenga:pasted__standardSurface5.msg" "VR_Jenga:pasted__materialInfo4.m"
+		;
+connectAttr "VR_Jenga:pasted__Diseño_sin_título__14__1.msg" "VR_Jenga:pasted__materialInfo4.t"
+		 -na;
+connectAttr "VR_Jenga:pasted__standardSurface5.oc" "VR_Jenga:pasted__standardSurface5SG.ss"
+		;
+connectAttr "VR_Jenga:pasted__Diseño_sin_título__14__1.oc" "VR_Jenga:pasted__standardSurface5.bc"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga:pasted__Diseño_sin_título__14__1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga:pasted__Diseño_sin_título__14__1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga:pasted__Diseño_sin_título__14__1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga:pasted__Diseño_sin_título__14__1.ws"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.c" "VR_Jenga:pasted__Diseño_sin_título__14__1.c"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.tf" "VR_Jenga:pasted__Diseño_sin_título__14__1.tf"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.rf" "VR_Jenga:pasted__Diseño_sin_título__14__1.rf"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.mu" "VR_Jenga:pasted__Diseño_sin_título__14__1.mu"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.mv" "VR_Jenga:pasted__Diseño_sin_título__14__1.mv"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.s" "VR_Jenga:pasted__Diseño_sin_título__14__1.s"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.wu" "VR_Jenga:pasted__Diseño_sin_título__14__1.wu"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.wv" "VR_Jenga:pasted__Diseño_sin_título__14__1.wv"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.re" "VR_Jenga:pasted__Diseño_sin_título__14__1.re"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.of" "VR_Jenga:pasted__Diseño_sin_título__14__1.of"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.r" "VR_Jenga:pasted__Diseño_sin_título__14__1.ro"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.n" "VR_Jenga:pasted__Diseño_sin_título__14__1.n"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.vt1" "VR_Jenga:pasted__Diseño_sin_título__14__1.vt1"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.vt2" "VR_Jenga:pasted__Diseño_sin_título__14__1.vt2"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.vt3" "VR_Jenga:pasted__Diseño_sin_título__14__1.vt3"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.vc1" "VR_Jenga:pasted__Diseño_sin_título__14__1.vc1"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.o" "VR_Jenga:pasted__Diseño_sin_título__14__1.uv"
+		;
+connectAttr "VR_Jenga:pasted__place2dTexture3.ofs" "VR_Jenga:pasted__Diseño_sin_título__14__1.fs"
+		;
+connectAttr "VR_Jenga:Jardin:Plate1_ncl1_2.oc" "VR_Jenga:Jardin:Plate1FBXASC046003SG.ss"
+		;
+connectAttr "VR_Jenga:Jardin:Plate1FBXASC046003SG.msg" "VR_Jenga:Jardin:materialInfo1.sg"
+		;
+connectAttr "VR_Jenga:Jardin:Plate1_ncl1_2.msg" "VR_Jenga:Jardin:materialInfo1.m"
+		;
+connectAttr "VR_Jenga:Jardin:Plate2_ncl1_2.oc" "VR_Jenga:Jardin:Plate2FBXASC046003SG.ss"
+		;
+connectAttr "VR_Jenga:Jardin:Plate2FBXASC046003SG.msg" "VR_Jenga:Jardin:materialInfo2.sg"
+		;
+connectAttr "VR_Jenga:Jardin:Plate2_ncl1_2.msg" "VR_Jenga:Jardin:materialInfo2.m"
+		;
+connectAttr "VR_Jenga:Jardin:Plate3_ncl1_2.oc" "VR_Jenga:Jardin:Plate3FBXASC046003SG.ss"
+		;
+connectAttr "VR_Jenga:Jardin:Plate3FBXASC046003SG.msg" "VR_Jenga:Jardin:materialInfo3.sg"
+		;
+connectAttr "VR_Jenga:Jardin:Plate3_ncl1_2.msg" "VR_Jenga:Jardin:materialInfo3.m"
+		;
+connectAttr "VR_Jenga:Jardin:Material.oc" "VR_Jenga:Jardin:PlaneSG.ss";
+connectAttr "VR_Jenga:Jardin:PlaneSG.msg" "VR_Jenga:Jardin:materialInfo4.sg";
+connectAttr "VR_Jenga:Jardin:Material.msg" "VR_Jenga:Jardin:materialInfo4.m";
+connectAttr "VR_Jenga:Jardin:base_color_texture.oc" "VR_Jenga:Jardin:tripo_mat_b5ebecae.c"
+		;
+connectAttr "VR_Jenga:Jardin:tripo_mat_b5ebecae.oc" "VR_Jenga:Jardin:tripo_node_b5ebecaeSG.ss"
+		;
+connectAttr "VR_Jenga:Jardin:tripo_node_b5ebecaeSG.msg" "VR_Jenga:Jardin:materialInfo5.sg"
+		;
+connectAttr "VR_Jenga:Jardin:tripo_mat_b5ebecae.msg" "VR_Jenga:Jardin:materialInfo5.m"
+		;
+connectAttr "VR_Jenga:Jardin:base_color_texture.msg" "VR_Jenga:Jardin:materialInfo5.t"
+		 -na;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.o" "VR_Jenga:Jardin:base_color_texture.uv"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.ofu" "VR_Jenga:Jardin:base_color_texture.ofu"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.ofv" "VR_Jenga:Jardin:base_color_texture.ofv"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.rf" "VR_Jenga:Jardin:base_color_texture.rf"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.reu" "VR_Jenga:Jardin:base_color_texture.reu"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.rev" "VR_Jenga:Jardin:base_color_texture.rev"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.vt1" "VR_Jenga:Jardin:base_color_texture.vt1"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.vt2" "VR_Jenga:Jardin:base_color_texture.vt2"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.vt3" "VR_Jenga:Jardin:base_color_texture.vt3"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.vc1" "VR_Jenga:Jardin:base_color_texture.vc1"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.ofs" "VR_Jenga:Jardin:base_color_texture.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga:Jardin:base_color_texture.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga:Jardin:base_color_texture.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga:Jardin:base_color_texture.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga:Jardin:base_color_texture.ws"
+		;
+connectAttr "VR_Jenga:Jardin:base_color_texture1.oc" "VR_Jenga:Jardin:tripo_mat_7a9657fd.c"
+		;
+connectAttr "VR_Jenga:Jardin:tripo_mat_7a9657fd.oc" "VR_Jenga:Jardin:tripo_node_7a9657fdSG.ss"
+		;
+connectAttr "VR_Jenga:Jardin:tripo_node_7a9657fdSG.msg" "VR_Jenga:Jardin:materialInfo6.sg"
+		;
+connectAttr "VR_Jenga:Jardin:tripo_mat_7a9657fd.msg" "VR_Jenga:Jardin:materialInfo6.m"
+		;
+connectAttr "VR_Jenga:Jardin:base_color_texture1.msg" "VR_Jenga:Jardin:materialInfo6.t"
+		 -na;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.o" "VR_Jenga:Jardin:base_color_texture1.uv"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.ofu" "VR_Jenga:Jardin:base_color_texture1.ofu"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.ofv" "VR_Jenga:Jardin:base_color_texture1.ofv"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.rf" "VR_Jenga:Jardin:base_color_texture1.rf"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.reu" "VR_Jenga:Jardin:base_color_texture1.reu"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.rev" "VR_Jenga:Jardin:base_color_texture1.rev"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.vt1" "VR_Jenga:Jardin:base_color_texture1.vt1"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.vt2" "VR_Jenga:Jardin:base_color_texture1.vt2"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.vt3" "VR_Jenga:Jardin:base_color_texture1.vt3"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.vc1" "VR_Jenga:Jardin:base_color_texture1.vc1"
+		;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.ofs" "VR_Jenga:Jardin:base_color_texture1.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga:Jardin:base_color_texture1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga:Jardin:base_color_texture1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga:Jardin:base_color_texture1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga:Jardin:base_color_texture1.ws"
+		;
+connectAttr "VR_Jenga:standardSurface4SG.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "VR_Jenga:standardSurface4.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "VR_Jenga:standardSurface5SG.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "VR_Jenga:standardSurface5.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "VR_Jenga:place2dTexture3.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "VR_Jenga:Diseño_sin_título__14__1.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "VR_Jenga:standardSurface3.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "VR_Jenga:standardSurface3SG.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "VR_Jenga:place2dTexture1.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "VR_Jenga:Diseño_sin_título__12__1.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "VR_Jenga:place2dTexture2.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "VR_Jenga:Diseño_sin_título__13__1.msg" "VR_Jenga:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "VR_Jenga_standardSurface3_Base_color_1.oc" "aiStandardSurface1.base_color"
+		;
+connectAttr "aiStandardSurface1.out" "aiStandardSurface1SG.ss";
+connectAttr "VR_Jenga:pCubeShape40.iog" "aiStandardSurface1SG.dsm" -na;
+connectAttr "aiStandardSurface1SG.msg" "materialInfo1.sg";
+connectAttr "aiStandardSurface1.msg" "materialInfo1.m";
+connectAttr "aiStandardSurface1.msg" "materialInfo1.t" -na;
+connectAttr "aiStandardSurface2.out" "aiStandardSurface2SG.ss";
+connectAttr "aiStandardSurface2SG.msg" "materialInfo2.sg";
+connectAttr "aiStandardSurface2.msg" "materialInfo2.m";
+connectAttr "aiStandardSurface2.msg" "materialInfo2.t" -na;
+connectAttr "aiStandardSurface3.out" "aiStandardSurface3SG.ss";
+connectAttr "aiStandardSurface3SG.msg" "materialInfo3.sg";
+connectAttr "aiStandardSurface3.msg" "materialInfo3.m";
+connectAttr "aiStandardSurface3.msg" "materialInfo3.t" -na;
+connectAttr ":defaultColorMgtGlobals.cme" "file1.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file1.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file1.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file1.ws";
+connectAttr ":defaultColorMgtGlobals.cme" "file2.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file2.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file2.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file2.ws";
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga_standardSurface3_Base_color_1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga_standardSurface3_Base_color_1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga_standardSurface3_Base_color_1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga_standardSurface3_Base_color_1.ws"
+		;
+connectAttr "place2dTexture1.c" "VR_Jenga_standardSurface3_Base_color_1.c";
+connectAttr "place2dTexture1.tf" "VR_Jenga_standardSurface3_Base_color_1.tf";
+connectAttr "place2dTexture1.rf" "VR_Jenga_standardSurface3_Base_color_1.rf";
+connectAttr "place2dTexture1.mu" "VR_Jenga_standardSurface3_Base_color_1.mu";
+connectAttr "place2dTexture1.mv" "VR_Jenga_standardSurface3_Base_color_1.mv";
+connectAttr "place2dTexture1.s" "VR_Jenga_standardSurface3_Base_color_1.s";
+connectAttr "place2dTexture1.wu" "VR_Jenga_standardSurface3_Base_color_1.wu";
+connectAttr "place2dTexture1.wv" "VR_Jenga_standardSurface3_Base_color_1.wv";
+connectAttr "place2dTexture1.re" "VR_Jenga_standardSurface3_Base_color_1.re";
+connectAttr "place2dTexture1.of" "VR_Jenga_standardSurface3_Base_color_1.of";
+connectAttr "place2dTexture1.r" "VR_Jenga_standardSurface3_Base_color_1.ro";
+connectAttr "place2dTexture1.n" "VR_Jenga_standardSurface3_Base_color_1.n";
+connectAttr "place2dTexture1.vt1" "VR_Jenga_standardSurface3_Base_color_1.vt1";
+connectAttr "place2dTexture1.vt2" "VR_Jenga_standardSurface3_Base_color_1.vt2";
+connectAttr "place2dTexture1.vt3" "VR_Jenga_standardSurface3_Base_color_1.vt3";
+connectAttr "place2dTexture1.vc1" "VR_Jenga_standardSurface3_Base_color_1.vc1";
+connectAttr "place2dTexture1.o" "VR_Jenga_standardSurface3_Base_color_1.uv";
+connectAttr "place2dTexture1.ofs" "VR_Jenga_standardSurface3_Base_color_1.fs";
+connectAttr "VR_Jenga_standardSurface4_Base_color_1.oc" "aiStandardSurface4.base_color"
+		;
+connectAttr "aiStandardSurface4.out" "aiStandardSurface4SG.ss";
+connectAttr "VR_Jenga:pCubeShape24.iog" "aiStandardSurface4SG.dsm" -na;
+connectAttr "aiStandardSurface4SG.msg" "materialInfo5.sg";
+connectAttr "aiStandardSurface4.msg" "materialInfo5.m";
+connectAttr "aiStandardSurface4.msg" "materialInfo5.t" -na;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga_standardSurface4_Base_color_1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga_standardSurface4_Base_color_1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga_standardSurface4_Base_color_1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga_standardSurface4_Base_color_1.ws"
+		;
+connectAttr "place2dTexture2.c" "VR_Jenga_standardSurface4_Base_color_1.c";
+connectAttr "place2dTexture2.tf" "VR_Jenga_standardSurface4_Base_color_1.tf";
+connectAttr "place2dTexture2.rf" "VR_Jenga_standardSurface4_Base_color_1.rf";
+connectAttr "place2dTexture2.mu" "VR_Jenga_standardSurface4_Base_color_1.mu";
+connectAttr "place2dTexture2.mv" "VR_Jenga_standardSurface4_Base_color_1.mv";
+connectAttr "place2dTexture2.s" "VR_Jenga_standardSurface4_Base_color_1.s";
+connectAttr "place2dTexture2.wu" "VR_Jenga_standardSurface4_Base_color_1.wu";
+connectAttr "place2dTexture2.wv" "VR_Jenga_standardSurface4_Base_color_1.wv";
+connectAttr "place2dTexture2.re" "VR_Jenga_standardSurface4_Base_color_1.re";
+connectAttr "place2dTexture2.of" "VR_Jenga_standardSurface4_Base_color_1.of";
+connectAttr "place2dTexture2.r" "VR_Jenga_standardSurface4_Base_color_1.ro";
+connectAttr "place2dTexture2.n" "VR_Jenga_standardSurface4_Base_color_1.n";
+connectAttr "place2dTexture2.vt1" "VR_Jenga_standardSurface4_Base_color_1.vt1";
+connectAttr "place2dTexture2.vt2" "VR_Jenga_standardSurface4_Base_color_1.vt2";
+connectAttr "place2dTexture2.vt3" "VR_Jenga_standardSurface4_Base_color_1.vt3";
+connectAttr "place2dTexture2.vc1" "VR_Jenga_standardSurface4_Base_color_1.vc1";
+connectAttr "place2dTexture2.o" "VR_Jenga_standardSurface4_Base_color_1.uv";
+connectAttr "place2dTexture2.ofs" "VR_Jenga_standardSurface4_Base_color_1.fs";
+connectAttr "VR_Jenga_standardSurface5_Base_color_1.oc" "aiStandardSurface5.base_color"
+		;
+connectAttr "aiStandardSurface5.out" "aiStandardSurface5SG.ss";
+connectAttr "VR_Jenga:pCubeShape8.iog" "aiStandardSurface5SG.dsm" -na;
+connectAttr "aiStandardSurface5SG.msg" "materialInfo6.sg";
+connectAttr "aiStandardSurface5.msg" "materialInfo6.m";
+connectAttr "aiStandardSurface5.msg" "materialInfo6.t" -na;
+connectAttr ":defaultColorMgtGlobals.cme" "VR_Jenga_standardSurface5_Base_color_1.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "VR_Jenga_standardSurface5_Base_color_1.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "VR_Jenga_standardSurface5_Base_color_1.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "VR_Jenga_standardSurface5_Base_color_1.ws"
+		;
+connectAttr "place2dTexture3.c" "VR_Jenga_standardSurface5_Base_color_1.c";
+connectAttr "place2dTexture3.tf" "VR_Jenga_standardSurface5_Base_color_1.tf";
+connectAttr "place2dTexture3.rf" "VR_Jenga_standardSurface5_Base_color_1.rf";
+connectAttr "place2dTexture3.mu" "VR_Jenga_standardSurface5_Base_color_1.mu";
+connectAttr "place2dTexture3.mv" "VR_Jenga_standardSurface5_Base_color_1.mv";
+connectAttr "place2dTexture3.s" "VR_Jenga_standardSurface5_Base_color_1.s";
+connectAttr "place2dTexture3.wu" "VR_Jenga_standardSurface5_Base_color_1.wu";
+connectAttr "place2dTexture3.wv" "VR_Jenga_standardSurface5_Base_color_1.wv";
+connectAttr "place2dTexture3.re" "VR_Jenga_standardSurface5_Base_color_1.re";
+connectAttr "place2dTexture3.of" "VR_Jenga_standardSurface5_Base_color_1.of";
+connectAttr "place2dTexture3.r" "VR_Jenga_standardSurface5_Base_color_1.ro";
+connectAttr "place2dTexture3.n" "VR_Jenga_standardSurface5_Base_color_1.n";
+connectAttr "place2dTexture3.vt1" "VR_Jenga_standardSurface5_Base_color_1.vt1";
+connectAttr "place2dTexture3.vt2" "VR_Jenga_standardSurface5_Base_color_1.vt2";
+connectAttr "place2dTexture3.vt3" "VR_Jenga_standardSurface5_Base_color_1.vt3";
+connectAttr "place2dTexture3.vc1" "VR_Jenga_standardSurface5_Base_color_1.vc1";
+connectAttr "place2dTexture3.o" "VR_Jenga_standardSurface5_Base_color_1.uv";
+connectAttr "place2dTexture3.ofs" "VR_Jenga_standardSurface5_Base_color_1.fs";
+connectAttr "place2dTexture2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "VR_Jenga_standardSurface4_Base_color_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "aiStandardSurface4.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "aiStandardSurface4SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "aiStandardSurface5.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "aiStandardSurface5SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "place2dTexture3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "VR_Jenga_standardSurface5_Base_color_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "aiStandardSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "file2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "aiStandardSurface1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "VR_Jenga_standardSurface3_Base_color_1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "VR_Jenga:standardSurface2SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:standardSurface3SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:standardSurface4SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:standardSurface5SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:mesa1:tripo_node_36502e0eSG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:pasted__standardSurface3SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:pasted__standardSurface4SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:pasted__standardSurface5SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:Jardin:Plate1FBXASC046003SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:Jardin:Plate2FBXASC046003SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:Jardin:Plate3FBXASC046003SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:Jardin:PlaneSG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:Jardin:tripo_node_b5ebecaeSG.pa" ":renderPartition.st" -na
+		;
+connectAttr "VR_Jenga:Jardin:tripo_node_7a9657fdSG.pa" ":renderPartition.st" -na
+		;
+connectAttr "aiStandardSurface1SG.pa" ":renderPartition.st" -na;
+connectAttr "aiStandardSurface2SG.pa" ":renderPartition.st" -na;
+connectAttr "aiStandardSurface3SG.pa" ":renderPartition.st" -na;
+connectAttr "aiStandardSurface4SG.pa" ":renderPartition.st" -na;
+connectAttr "aiStandardSurface5SG.pa" ":renderPartition.st" -na;
+connectAttr "VR_Jenga:standardSurface2.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:standardSurface3.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:standardSurface4.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:standardSurface5.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:mesa1:tripo_mat_36502e0e.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:pasted__standardSurface3.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:pasted__standardSurface4.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:pasted__standardSurface5.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:Jardin:Plate1_ncl1_2.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:Jardin:Plate2_ncl1_2.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:Jardin:Plate3_ncl1_2.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:Jardin:Material.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:Jardin:tripo_mat_b5ebecae.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "VR_Jenga:Jardin:tripo_mat_7a9657fd.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "aiStandardSurface1.msg" ":defaultShaderList1.s" -na;
+connectAttr "aiStandardSurface2.msg" ":defaultShaderList1.s" -na;
+connectAttr "aiStandardSurface3.msg" ":defaultShaderList1.s" -na;
+connectAttr "aiStandardSurface4.msg" ":defaultShaderList1.s" -na;
+connectAttr "aiStandardSurface5.msg" ":defaultShaderList1.s" -na;
+connectAttr "VR_Jenga:place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "VR_Jenga:place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "VR_Jenga:place2dTexture3.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "VR_Jenga:mesa1:place2dTexture1.msg" ":defaultRenderUtilityList1.u" 
+		-na;
+connectAttr "VR_Jenga:pasted__place2dTexture1.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "VR_Jenga:pasted__place2dTexture2.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "VR_Jenga:pasted__place2dTexture3.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "VR_Jenga:Jardin:place2dTexture1.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "VR_Jenga:Jardin:place2dTexture2.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture3.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "VR_Jenga:Diseño_sin_título__12__1.msg" ":defaultTextureList1.tx" -na
+		;
+connectAttr "VR_Jenga:Diseño_sin_título__13__1.msg" ":defaultTextureList1.tx" -na
+		;
+connectAttr "VR_Jenga:Diseño_sin_título__14__1.msg" ":defaultTextureList1.tx" -na
+		;
+connectAttr "VR_Jenga:mesa1:base_color_texture.msg" ":defaultTextureList1.tx" -na
+		;
+connectAttr "VR_Jenga:pasted__Diseño_sin_título__12__1.msg" ":defaultTextureList1.tx"
+		 -na;
+connectAttr "VR_Jenga:pasted__Diseño_sin_título__13__1.msg" ":defaultTextureList1.tx"
+		 -na;
+connectAttr "VR_Jenga:pasted__Diseño_sin_título__14__1.msg" ":defaultTextureList1.tx"
+		 -na;
+connectAttr "VR_Jenga:Jardin:base_color_texture.msg" ":defaultTextureList1.tx" -na
+		;
+connectAttr "VR_Jenga:Jardin:base_color_texture1.msg" ":defaultTextureList1.tx" 
+		-na;
+connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
+connectAttr "VR_Jenga_standardSurface3_Base_color_1.msg" ":defaultTextureList1.tx"
+		 -na;
+connectAttr "VR_Jenga_standardSurface4_Base_color_1.msg" ":defaultTextureList1.tx"
+		 -na;
+connectAttr "VR_Jenga_standardSurface5_Base_color_1.msg" ":defaultTextureList1.tx"
+		 -na;
+// End of Fichas.ma
