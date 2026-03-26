@@ -49,6 +49,8 @@ public class TowerGenerator : MonoBehaviour
                 piece.blockType = RandomType();
                 piece.row = row;
 
+                SetColor(go, piece.blockType);
+
                 AllPieces.Add(piece);
             }
         }
@@ -61,4 +63,29 @@ public class TowerGenerator : MonoBehaviour
         if (r < rockChance + paperChance) return BlockType.Paper;
         return BlockType.Scissors;
     }
+    private void SetColor(GameObject go, BlockType type)
+{
+    Renderer renderer = go.GetComponent<Renderer>();
+
+    if (renderer != null)
+    {
+        // IMPORTANTE: usar material instancia (no sharedMaterial)
+        Material mat = renderer.material;
+
+        switch (type)
+        {
+            case BlockType.Rock:
+                mat.color = Color.gray;
+                break;
+
+            case BlockType.Paper:
+                mat.color = Color.white;
+                break;
+
+            case BlockType.Scissors:
+                mat.color = Color.red;
+                break;
+        }
+    }
+}
 }
