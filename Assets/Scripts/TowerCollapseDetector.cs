@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class TowerCollapseDetector : MonoBehaviour
 {
     [Tooltip("Cuántos metros debe desplazarse una pieza para considerarse caída")]
-    public float fallThreshold = 0.12f;
+    public float fallThreshold = 0.5f;
 
     public UnityEvent onCollapse;
     public bool HasCollapsed { get; private set; }

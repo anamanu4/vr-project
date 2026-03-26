@@ -62,8 +62,11 @@ public class TVDisplay : MonoBehaviour
                 // Este se sobreescribe inmediatamente por OnTurnResolved
                 break;
             case GameState.GameOver:
-                // Se maneja en OnTowerCollapsed o en los HP events
-                break;
+               string winner = GameManager.Instance.health.PlayerHP <= 0 
+                   ? "¡Perdiste!" 
+                 : "¡Ganaste!";
+               displayText.text = $"Fin del juego\n{winner}";
+               break;
         }
     }
 

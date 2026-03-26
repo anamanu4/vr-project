@@ -11,7 +11,8 @@ public class TopPlacementZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var piece = other.GetComponent<JengaPiece>();
+        var piece = other.GetComponent<JengaPiece>() 
+            ?? other.GetComponentInParent<JengaPiece>();
         if (piece != null && piece.hasBeenRemoved)
             _pieceInZone = piece;
     }

@@ -2,27 +2,32 @@ using UnityEngine;
 using Oculus.Interaction;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AudioSource))]
 public class JengaPiece : MonoBehaviour
 {
     [Header("Tipo RPS")]
     public BlockType blockType;
 
+    [Header("Audio")]
+    public AudioClip[] clips; // asignado por TowerGenerator
+
     [HideInInspector] public bool hasBeenRemoved = false;
     [HideInInspector] public int row;
 
-    // El Grabbable puede estar en un hijo (estructura de Bui   ldingBlock)
     private Grabbable _grabbable;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
-        _grabbable = GetComponentInChildren<Grabbable>();
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.playOnAwake = false;
 
+        _grabbable = GetComponent<Grabbable>();
         if (_grabbable == null)
         {
-            Debug.LogWarning($"[JengaPiece] No se encontró Grabbable en {gameObject.name} ni en sus hijos.");
+            Debug.LogWarning($"[JengaPiece] No Grabbable en {gameObject.name}");
             return;
         }
-
         _grabbable.WhenPointerEventRaised += OnPointerEvent;
     }
 
@@ -39,6 +44,7 @@ public class JengaPiece : MonoBehaviour
             case PointerEventType.Select:
                 if (hasBeenRemoved) return;
                 hasBeenRemoved = true;
+                PlayRandomClip();
                 GameManager.Instance.OnPieceRemoved(this);
                 break;
 
@@ -47,6 +53,11 @@ public class JengaPiece : MonoBehaviour
                 break;
         }
     }
-    
-    
+
+    private void PlayRandomClip()
+    {
+        if (clips == null || clips.Length == 0) return;
+        AudioClip clip = clips[Random.Range(0, clips.Length)];
+        if (clip != null) _audioSource.PlayOneShot(clip);
+    }
 }

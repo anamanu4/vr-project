@@ -8,15 +8,23 @@ public class TowerGenerator : MonoBehaviour
     public int rows = 18;
 
     // Dimensiones estándar de Jenga (metros)
-    public float pieceWidth  = 0.075f;
-    public float pieceHeight = 0.025f;
-    public float pieceLength = 0.225f;
+    public float pieceWidth  = 1f;
+    public float pieceHeight = 0.4f;
+    public float pieceLength = 3f;
     public float gap         = 0.001f;  // separación entre fichas
 
     [Header("Distribución de tipos")]
     [Range(0f, 1f)] public float rockChance    = 0.334f;
     [Range(0f, 1f)] public float paperChance   = 0.333f;
     // scissors ocupa el resto
+
+    [Header("Materiales por tipo")]
+    public Material materialRock;
+    public Material materialPaper;
+    public Material materialScissors;
+
+    [Header("Audio")]
+    public AudioClip[] pieceClips;
 
     public List<JengaPiece> AllPieces { get; private set; } = new();
 
@@ -49,7 +57,11 @@ public class TowerGenerator : MonoBehaviour
                 piece.blockType = RandomType();
                 piece.row = row;
 
+                piece.clips = pieceClips;
+
                 SetColor(go, piece.blockType);
+
+                
 
                 AllPieces.Add(piece);
             }
@@ -65,27 +77,18 @@ public class TowerGenerator : MonoBehaviour
     }
     private void SetColor(GameObject go, BlockType type)
 {
-    Renderer renderer = go.GetComponent<Renderer>();
-
-    if (renderer != null)
+    Renderer[] renderers = go.GetComponentsInChildren<Renderer>();
+    Material mat = type switch
     {
-        // IMPORTANTE: usar material instancia (no sharedMaterial)
-        Material mat = renderer.material;
+        BlockType.Rock     => materialRock,
+        BlockType.Paper    => materialPaper,
+        BlockType.Scissors => materialScissors,
+        _                  => materialRock
+    };
 
-        switch (type)
-        {
-            case BlockType.Rock:
-                mat.color = Color.gray;
-                break;
-
-            case BlockType.Paper:
-                mat.color = Color.white;
-                break;
-
-            case BlockType.Scissors:
-                mat.color = Color.red;
-                break;
-        }
-    }
+    foreach (var r in renderers)
+        r.material = mat;
 }
+
+
 }

@@ -42,6 +42,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        // NO iniciar aquí — esperar al MenuManager
+    }
+
+    public void StartGame()
+    {
         towerGenerator.GenerateTower();
         collapseDetector.Initialize(towerGenerator.AllPieces);
 
